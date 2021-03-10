@@ -1,13 +1,15 @@
 {
-  "name": "backend",
+  "name": "fmi-backend-developer-test",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/server.js",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node ."
   },
   "keywords": [],
-  "author": "",
+  "author": "mouraCorazim (https://github.com/mouraCorazim)",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
