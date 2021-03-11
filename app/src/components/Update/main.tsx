@@ -2,6 +2,7 @@ import { ReactElement, useState } from "react";
 import { DoctorAddressProps, DoctorAddressState } from "../../types";
 
 import requestCepInfos from "../../services/requestCepInfos"
+import {clearInput, Handle, isInvalidCelLength, isKeyNumeric, needCelTraceChar, needDotChar, needParentesis, needTraceCharAt} from "../../utils/InputHandlers"
 
 import DoctorAddress from "../Insert/components/DoctorAddress";
 
@@ -18,6 +19,7 @@ const initialDoctorProps: DoctorAddressProps = {
     complemento: undefined
 }
 
+
 export default function Update(): ReactElement{
 
     const [state, updateState]: [DoctorAddressState, Function]= useState({value: "", data: initialDoctorProps})
@@ -33,8 +35,11 @@ export default function Update(): ReactElement{
                         id="search-doctor" 
                         name="searchDoctorValue"
                         type="text" 
-                        minLength={7}
-                        maxLength={7}
+                        minLength={9}
+                        maxLength={9}
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyNumeric)
+                                                .handler(needDotChar)}
                         required />
                 </form>
                 <article>
@@ -74,18 +79,27 @@ export default function Update(): ReactElement{
                         id="doctor-phone" 
                         name="registerPhone" 
                         type="text"
-                        minLength={10}
-                        maxLength={10}
-                        value="1121933352"
+                        minLength={13}
+                        maxLength={13}
+                        value="(11)2193-3352"
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyNumeric)
+                                                .handler(needParentesis)
+                                                .handler(needTraceCharAt(8))}
                         required />
 
                     <input 
                         id="doctor-cel" 
                         name="registerCel" 
                         type="text"
-                        minLength={10}
-                        maxLength={11}
-                        value="11968475194"
+                        minLength={13}
+                        maxLength={14}
+                        value="(11)96847-5194"
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyNumeric)
+                                                .handler(needParentesis)
+                                                .handler(needCelTraceChar)
+                                                .handler(isInvalidCelLength)}
                         required />
 
                     <input 
@@ -108,8 +122,12 @@ export default function Update(): ReactElement{
                         type="text"
                         minLength={8}
                         maxLength={8}
-                        value="04176260"
+                        value="04176-260"
+                        onFocus={(event) => Handle(event).handler(clearInput)}
                         onBlur={(event) => requestCepInfos(event.target.value, updateState)}
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyNumeric)
+                                                .handler(needTraceCharAt(5))}
                         required />
 
                     <DoctorAddress

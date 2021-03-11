@@ -46,8 +46,19 @@ form{
     width: 30%;
 }
 
+h1{
+    font-size: 24pt;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+}
+
 h2{
     margin: 0;
+}
+
+h3{
+    text-align: center;
 }
 
 header{
@@ -56,10 +67,14 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
+    
     margin: 0 0 2% 0;
-
+    
     height: 50px;
+}
+
+header svg:hover path{
+    fill: #07be88;
 }
 
 input{
@@ -78,6 +93,10 @@ input[type="text"]{
     width: 90%;
 }
 
+input[readonly]{
+    color: #DCDCDC;
+}
+
 label{
     align-items: center;
     display: flex;
@@ -85,6 +104,11 @@ label{
     margin: 5px 5px 5px 25px;
     
     height: 38px;
+}
+
+li{
+    color: #808080;
+    margin: 5px 0 0 20px;
 }
 
 main{
@@ -131,8 +155,14 @@ svg{
     margin: 10px 0 0 15px;
 }
 
-header svg:hover path{
-    fill: #07be88;
+ul{
+    border-top: solid #07be88 1px;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 50px;
+
+    width: 35%;
 }
 
 .card-body{
@@ -199,6 +229,12 @@ header svg:hover path{
     justify-content: space-around;
 
     margin-top: 50px;
+}
+
+.propose-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .search-results{

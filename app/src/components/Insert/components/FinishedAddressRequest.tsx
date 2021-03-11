@@ -1,5 +1,6 @@
 import { ReactElement } from 'react'
 import {DoctorAddressProps} from '../../../types'
+import { Handle, isKeyNumeric} from '../../../utils/InputHandlers'
 
 export default function onFinishedRequest(data: DoctorAddressProps): ReactElement{
     return (
@@ -16,8 +17,9 @@ export default function onFinishedRequest(data: DoctorAddressProps): ReactElemen
                 type="text" 
                 name="registerAddressNumber"
                 minLength={1}
-                maxLength={6}
+                maxLength={5}
                 placeholder="Número"
+                onKeyUp={(event) => Handle(event).handler(isKeyNumeric)}
                 required />
             
             <input 

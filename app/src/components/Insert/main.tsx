@@ -2,6 +2,16 @@ import { ReactElement, useState } from "react";
 import { DoctorAddressProps, DoctorAddressState } from "../../types";
 
 import requestCepInfos from "../../services/requestCepInfos"
+import {
+    Handle, 
+    isKeyLetter, 
+    upperCase, 
+    isKeyNumeric, 
+    needDotChar, 
+    needParentesis, 
+    needTraceCharAt, 
+    needCelTraceChar, 
+    isInvalidCelLength} from '../../utils/InputHandlers'
 
 import DoctorAddress from "./components/DoctorAddress";
 import SpecialtySelect from "./components/SpecialtySelect";
@@ -40,30 +50,45 @@ export default function Insert(): ReactElement{
                         type="text"
                         minLength={7}
                         maxLength={119}
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyLetter)
+                                                .handler(upperCase)}
                         required />
 
                     <input 
                         id="doctor-register" 
                         name="registerCRM" 
                         type="text"
-                        minLength={7}
-                        maxLength={7}
+                        minLength={9}
+                        maxLength={9}
+                        onKeyUp={(event) => Handle(event)
+                                             .handler(isKeyNumeric)
+                                             .handler(needDotChar)}
                         required />
 
                     <input 
                         id="doctor-phone" 
                         name="registerPhone" 
                         type="text"
-                        minLength={10}
-                        maxLength={10}
+                        minLength={13}
+                        maxLength={13}
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyNumeric)
+                                                .handler(needParentesis)
+                                                .handler(needTraceCharAt(8))}
                         required />
 
                     <input 
                         id="doctor-cel" 
                         name="registerCel" 
                         type="text"
-                        minLength={10}
-                        maxLength={11}
+                        minLength={13}
+                        maxLength={14}
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyNumeric)
+                                                .handler(needParentesis)
+                                                .handler(needCelTraceChar)
+                                                .handler(isInvalidCelLength)}
                         required />
 
                     <SpecialtySelect
@@ -78,9 +103,12 @@ export default function Insert(): ReactElement{
                         id="doctor-cep" 
                         name="registerCEP" 
                         type="text"
-                        minLength={8}
-                        maxLength={8}
+                        minLength={9}
+                        maxLength={9}
                         onBlur={(event) => requestCepInfos(event.target.value, setState)}
+                        onKeyUp={(event) => Handle(event)
+                                                .handler(isKeyNumeric)
+                                                .handler(needTraceCharAt(5))}
                         required />
 
                     <DoctorAddress

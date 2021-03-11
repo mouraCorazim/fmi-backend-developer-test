@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom';
+import Home from './components/Home/main';
 import Insert from './components/Insert/main';
 import Search from './components/Search/main';
 import Update from './components/Update/main';
@@ -29,6 +30,9 @@ function App(): ReactElement{
         </header>
         <section>
           <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
             <Route exact path="/insert">
               <Insert />
             </Route>
