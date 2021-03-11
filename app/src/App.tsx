@@ -1,11 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import { ReactElement } from 'react';
+import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom';
 import './App.css';
+import Insert from './components/Insert/main';
 
-function App() {
+function App(): ReactElement{
   return (
-    <div className="App">
-    </div>
+    <>
+      <Router>
+        <header>
+          <nav>
+            <Link 
+              to="/insert"> Insert </Link>
+          </nav>
+        </header>
+        <section>
+          <Switch>
+            <Route exact path="/insert">
+              <Insert />
+            </Route>
+          </Switch>
+        </section>
+      </Router>
+    </>
   );
 }
 
