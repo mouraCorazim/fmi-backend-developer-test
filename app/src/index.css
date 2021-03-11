@@ -1,8 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body{
+    font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
-main{
+article{
+    margin-left: 25px;
+    width: 45%;
+}
+
+button{
+    background-color: #3c83c0;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    outline: none;
+    font-weight: bold;
+    
+    height: 38px;
+    width: 15%;
+}
+
+button:hover{
+    background-color: #ffffff;
+    border: solid #3c83c0 1px;
+    color: #3c83c0;
+    cursor: pointer;
+}
+
+footer{
+    border-top: solid #DCDCDC 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: 12% 0 0 0;
+}
+
+form{
+    border-right: solid #3c83c0 1px;
+    display: flex;
+    flex-direction: column;
+    
+    width: 30%;
+}
+
+h2{
     margin: 0;
+}
+
+header{
+    align-items: center;
+    border-bottom: solid #DCDCDC 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 0 0 2% 0;
+
+    height: 50px;
+}
+
+input{
+    border: solid #DCDCDC 1px;
+    border-radius: 8px;
+    font-size: 12pt;
+    outline: none;
+    
+    margin: 5px 0 5px 0;
+    padding: 5px;
+    
+    height: 26px;
+}
+
+input[type="text"]{
+    width: 90%;
+}
+
+label{
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    margin: 5px 5px 5px 25px;
+    
+    height: 38px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    margin: 0;
+
+    height: 100%;
     width: 100%;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    width: 50%;
+}
+
+p{
+    color: #808080;
+    font-size: 10pt;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+select{
+    border: solid #DCDCDC 1px;
+    border-radius: 4px;
+    outline: none;
+
+    margin: 15px 0 15px 0;
+
+    width: 45%;
+}
+
+svg{
+    margin: 10px 0 0 15px;
+}
+
+header svg:hover path{
+    fill: #07be88;
+}
+
+.card-body{
+    margin-left: 5px;
+}
+
+.card-footer{
+    border-top: solid #DCDCDC 1px;
+}
+
+.card-header, .card-footer{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 0 2% 15%;
+}
+
+.doctor-card{
+    border: solid #DCDCDC 1px;
+    border-left: solid #07be88 2px;
+
+    margin: 15px 10px 0 10px;
+
+    width: 40%;
+}
+
+.doctor-card .card-emphasis{
+    color: #202020;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.labels-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.link{
+    color: #808080;
+    font-size: 12pt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link:hover{
+    color: #3c83c0;
+    cursor: pointer;
+}
+
+.operation-button{
+    margin-left: 26%;
+}
+
+.page-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin-top: 50px;
+}
+
+.search-results{
+    border-top: solid #DCDCDC 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 50px 0 0 0 ;
+
+    height: 60%;
+    width: 100%;
+}
+
+.update-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    margin: 15px 0 0 2%;
+}
+
+.update-container{
+    border-top: solid #DCDCDC 1px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+
+    margin: 50px 0 2% 8%;
 }

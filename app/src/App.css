@@ -1,9 +1,0 @@
-header{
-    height: 50px;
-}
-
-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}

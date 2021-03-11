@@ -47,6 +47,12 @@ export default function onFinishedRequest(data: DoctorAddressProps): ReactElemen
                 name="registerAddressState"
                 value={data.uf}
                 readOnly />
+            
+            <input
+                type="hidden" 
+                name="registerDDD"
+                value={data.ddd}
+                readOnly />
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import { ReactElement, useState } from "react";
 import { DoctorAddressProps, DoctorAddressState } from "../../types";
-import "./Insert.css"
 
 import requestCepInfos from "../../services/requestCepInfos"
 
@@ -24,8 +23,8 @@ export default function Insert(): ReactElement{
     const [state, setState]: [DoctorAddressState, Function] = useState({value: "", data: initialDoctorProps})
     return (
         <>
-            <div className="register-container">
-                <div className="doctor-register-labels">
+            <div className="container">
+                <div className="labels-container">
                     <label htmlFor="doctor-name">Nome</label>
                     <label htmlFor="doctor-register">CRM</label>
                     <label htmlFor="doctor-phone">Telefone</label>
@@ -91,11 +90,11 @@ export default function Insert(): ReactElement{
                 <article>
                     <h2>Registro de médico especialista</h2>
                     <p>Página para registro de médico especialista.</p>
-                    <p>No registro o médico pode ter até duas especialidades.</p>
+                    <p>No registro o médico deve ter ao mínimo duas especialidades.</p>
                     <p>Ao preencher o número do CEP o sistema buscará as demais informações, sendo necessário apenas o número residencial e o complemento, caso haja.</p>
                 </article>
             </div>
-            <button id="save-register-button"> Salvar registro </button>
+            <button className="operation-button"> Salvar registro </button>
         </>
     )
 }
