@@ -65,14 +65,14 @@ export default function Update(): ReactElement{
                         id="doctor-name" 
                         name="registerName" 
                         type="text"
-                        value="Lucas Moura Corazim"
+                        defaultValue="Lucas Moura Corazim"
                         readOnly />
 
                     <input 
                         id="doctor-register" 
                         name="registerCRM" 
                         type="text"
-                        value="69.090.34"
+                        defaultValue="69.090.34"
                         readOnly />
 
                     <input 
@@ -81,7 +81,7 @@ export default function Update(): ReactElement{
                         type="text"
                         minLength={13}
                         maxLength={13}
-                        value="(11)2193-3352"
+                        defaultValue="(11)2193-3352"
                         onKeyUp={(event) => Handle(event)
                                                 .handler(isKeyNumeric)
                                                 .handler(needParentesis)
@@ -94,7 +94,7 @@ export default function Update(): ReactElement{
                         type="text"
                         minLength={13}
                         maxLength={14}
-                        value="(11)96847-5194"
+                        defaultValue="(11)96847-5194"
                         onKeyUp={(event) => Handle(event)
                                                 .handler(isKeyNumeric)
                                                 .handler(needParentesis)
@@ -106,28 +106,28 @@ export default function Update(): ReactElement{
                         id="specialty-1" 
                         name="specialty1" 
                         type="text"
-                        value="Cardiologista infantil"
+                        defaultValue="Cardiologista infantil"
                         readOnly />
 
                     <input
                         id="specialty-2"
                         name="specialty2" 
                         type="text"
-                        value="Cirurgião"
+                        defaultValue="Cirurgião"
                         readOnly />
 
                     <input 
                         id="doctor-cep" 
                         name="registerCEP" 
                         type="text"
-                        minLength={8}
-                        maxLength={8}
-                        value="04176-260"
-                        onFocus={(event) => Handle(event).handler(clearInput)}
+                        minLength={9}
+                        maxLength={9}
+                        defaultValue="04176-260"
                         onBlur={(event) => requestCepInfos(event.target.value, updateState)}
                         onKeyUp={(event) => Handle(event)
                                                 .handler(isKeyNumeric)
                                                 .handler(needTraceCharAt(5))}
+
                         required />
 
                     <DoctorAddress
