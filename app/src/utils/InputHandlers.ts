@@ -56,6 +56,11 @@ export function Handle(event: any){
             event.target.value = fn(event)
 
             return Handle(event)
+        },
+        update: (fn: Function) => {
+            fn(event)
+
+            return Handle(event)
         }
     }
 }

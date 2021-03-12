@@ -1,18 +1,13 @@
-export default function requestCepInfos(cep: string, setState: Function){
+import axios from 'axios'
+import { DoctorRegisterState} from '../types'
 
-    setState({value: "loading", data: {}})
+export default function requestCepInfos(cep: string | undefined, state: DoctorRegisterState, setState: Function){
+
+    setState({value: "loading", data: state.data})
 
     const requestUrl = `https://viacep.com.br/ws/${cep}/json`
 
-    const requestInit: RequestInit = {
-        method: "GET",
-        headers:{
-            "Accept": "application/json"
-        }
-    }
-
-    fetch(requestUrl, requestInit)
-        .then(res => res.json())
-        .then(json => setState({value: "finished", data: json}))
-        .catch(err => setState({value: "error", data: {}}))
+    axios.get(requestUrl)
+        .then(res => setState({value: "finished", data: {...state.data, ...res.data}}))
+        .catch(err => setState({value: "error", data: state.data}))
 }

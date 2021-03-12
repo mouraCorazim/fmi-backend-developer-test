@@ -1,9 +1,9 @@
 import { ReactElement } from 'react';
 import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom';
-import Home from './components/Home/main';
-import Insert from './components/Insert/main';
-import Search from './components/Search/main';
-import Update from './components/Update/main';
+import Home from './pages/Home/main';
+import Insert from './pages/Insert/main';
+import Search from './pages/Search/main';
+import Update from './pages/Update/main';
 
 function App(): ReactElement{
   return (
