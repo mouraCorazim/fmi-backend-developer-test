@@ -50,6 +50,7 @@ export default function Update(): ReactElement{
                                                 .handler(needDotChar)
                                                 .update(setDoctorCRM(state, setState))}
                         required />
+                    <p>O número de CRM é um valor único e chave primária</p>
                 </form>
                 <article>
                     <h2>Atualização de médico especialista registrado</h2>

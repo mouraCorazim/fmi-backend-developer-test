@@ -1,5 +1,5 @@
-import app from './app/app'
+import api from './api'
 
-const PORT = 8000
+const PORT = process.env.PORT
 
-app.listen(PORT, () => console.log(`Server running on http://localhost.com/${PORT}`))
+api.listen(PORT, () => console.log(`Server running on http://localhost.com/${PORT}`))
